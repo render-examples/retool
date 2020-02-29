@@ -1,0 +1,44 @@
+services:
+- type: web
+  name: retool
+  env: docker
+  plan: standard
+  healthCheckPath: /api/checkHealth
+  envVars:
+  - key: JWT_SECRET
+    generateValue: true
+  - key: NODE_ENV
+    value: production
+  - key: POSTGRES_DB
+    fromDatabase:
+      name: retool
+      property: database
+  - key: POSTGRES_HOST
+    fromDatabase:
+      name: retool
+      property: host
+  - key: POSTGRES_PORT
+    fromDatabase:
+      name: retool
+      property: port
+  - key: POSTGRES_USER
+    fromDatabase:
+      name: retool
+      property: user
+  - key: POSTGRES_PASSWORD
+    fromDatabase:
+      name: retool
+      property: password
+  - key: ENCRYPTION_KEY
+    generateValue: true
+  - key: FORCE_SSL
+    value: true
+  - key: HEROKU_HOSTED
+    value: true
+  - key: LICENSE_KEY
+    value: EXPIRED-LICENSE-KEY-TRIAL
+
+databases:
+- name: retool
+  databaseName: retooldb
+  user: retool_user
