@@ -1,1 +1,1 @@
-FROM tryretool/backend:2.54.8
+FROM tryretool/backend:latest
