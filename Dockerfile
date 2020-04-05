@@ -1,2 +1,2 @@
 # change the version below to upgrade your instance of Retool
-FROM tryretool/backend:2.54.11
+FROM tryretool/backend:latest
