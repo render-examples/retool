@@ -4,6 +4,7 @@ services:
   env: docker
   plan: standard
   healthCheckPath: /api/checkHealth
+  autoDeploy: false
   envVars:
   - key: JWT_SECRET
     generateValue: true
